@@ -41,6 +41,7 @@ namespace DummyProjectSM.Controllers
             }
         }
 
+        [HttpGet]
         public ActionResult Profile()
         {
 
@@ -69,6 +70,43 @@ namespace DummyProjectSM.Controllers
 
             return View(model);
 
+        }
+
+        [HttpPost]
+        public ActionResult Profile(HttpPostedFileBase file, UserModel model)
+        {
+            var userId = User.Identity.GetUserId();
+            var userEmail = UserManager.GetEmail(userId);
+
+            try
+            {
+                if (file.ContentLength > 0)
+                {
+                    string _FileName = Path.GetFileName(file.FileName);
+                    string _path = Path.Combine(Server.MapPath("~/UploadedFiles"), _FileName);
+                    file.SaveAs(_path);
+                    model.ProfilePicURL = _FileName;
+
+                    using (var context = new foodiesEntities1())
+                    {
+                        var userToUpdate = context.DaPrUsers.FirstOrDefault(m => m.UserEmail == userEmail);
+
+                        userToUpdate.ProfilePicURL = "../UploadedFiles/" + _FileName;
+                        userToUpdate.UserBio = model.UserBio;
+
+                        context.SaveChanges();
+                    };
+                }
+                ViewBag.Message = "File Uploaded Successfully!!";
+
+
+                return View(model);
+            }
+            catch
+            {
+                ViewBag.Message = "File upload failed!!";
+                return View(model);
+            }
         }
 
         public ActionResult Gallery(PostModel model)

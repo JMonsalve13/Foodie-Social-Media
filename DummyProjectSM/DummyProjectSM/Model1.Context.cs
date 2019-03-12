@@ -16,6 +16,7 @@ namespace DummyProjectSM
     public partial class foodiesEntities1 : DbContext
     {
         public foodiesEntities1()
+            //: base("name=dapr.cgxhizvygbdd.us-east-2.rds.amazonaws.com")
             : base("name=foodiesEntities1")
         {
         }

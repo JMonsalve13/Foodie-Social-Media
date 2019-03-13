@@ -1,12 +1,11 @@
 ﻿@model DummyProjectSM.Models.UserModel
 
 @{
-    /**/
 
     ViewBag.Title = "Profile";
 }
 
-<h2>Profile</h2>
+<h2 class="h2Class">Profile</h2>
 
 <h3>Username: @Model.UserName</h3>
 
@@ -14,15 +13,20 @@
 {
     @Html.AntiForgeryToken()
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5b978dccbfe5619444b4c64f0362007db219f8e1
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <img class="profilepic" src="@Model.ProfilePicURL" />
-
+    <center><img class="profilepic" src="@Model.ProfilePicURL" /></center>
     <div>
-        <input name="file" type="file" accept="image/png, image/jpeg" /> <br />
+        <center><input id = "file" name="file" type="file" accept="image/png, image/jpeg" /> </center>
+        <center><p id="warning">Please upload porportional images to stop img stretching (500x500px, 1080x1080px) ect.</p></center>
+        <br />
 
-        <input type="submit" value="Upload" />
 
         @ViewBag.Message
 
@@ -33,7 +37,7 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.UserBio, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div id ="BioBox"class="col-md-10">
             @Html.EditorFor(model => model.UserBio, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.UserBio, "", new { @class = "text-danger" })
         </div>
@@ -46,13 +50,16 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <label class="paddingLabel">Diet:</label>
+            <br />
+            <label class="paddingLabel">Weight</label>
+            <br />
+            <label class="paddingLabel">Favorite Food:</label>
+            <br />
+            <label class="paddingLabel">Gender:</label>
+            <br />
+            <input type="submit" value="Update" class="btn btn-default" />
         </div>
     </div>
 
 }
-
-<p>Diet:</p>
-<p>Weight</p>
-<p>Favorite Food:</p>
-<p>Gender:</p>

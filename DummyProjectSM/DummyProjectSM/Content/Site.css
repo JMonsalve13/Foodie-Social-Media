@@ -67,10 +67,11 @@ footer{
     display:block;
 }
 
-.profilepic{
+.profilepic {
     border-radius: 50%;
-    width:125px;
-    height:125px;
+    width: 250px;
+    height: 250px;
+    overflow:hidden;
 }
 
 .galleryimg {
@@ -109,6 +110,12 @@ footer {
     color: #46c5e5;
     font-size: 24px;
 }
+h2{
+    font-family: 'Sniglet', cursive;
+    color: #46c5e5;
+    font-size: 48px;
+    margin-left: 50px;
+}
 label{
     font-family: 'Sniglet', cursive;
     color: #46c5e5;
@@ -131,3 +138,25 @@ input[type=submit] {
         border-radius: 5px;
         border-color: #46c5e5;
     }
+h3{
+    font-family: 'Sniglet', cursive;
+    color: #46c5e5;
+    font-size: 36px;
+    margin-left: 100px;
+}
+#file{
+    margin: 25px;
+    margin-left: 75px;
+}
+#PostButton{
+    margin-left: 210px;
+}
+#warning{
+    font-size: 11px;
+    color: red;
+}
+dt {
+    font-family: 'Sniglet', cursive;
+    color: #46c5e5;
+    font-size: 18px;
+}

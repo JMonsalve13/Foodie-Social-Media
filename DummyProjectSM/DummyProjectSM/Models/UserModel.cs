@@ -12,5 +12,9 @@ namespace DummyProjectSM.Models
         public string UserEmail { get; set; }
         public string UserBio { get; set; }
         public string ProfilePicURL { get; set; }
+        public string Diet { get; set; }
+        public int WeightInPounds { get; set; }
+        public string FaveFood { get; set; }
+        public string Gender { get; set; }
     }
 }

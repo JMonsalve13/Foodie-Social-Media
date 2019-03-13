@@ -10,11 +10,9 @@
 
 <h3>Username: @Model.UserName</h3>
 
-@using (Html.BeginForm("Post", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Profile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-
-    <h2>Post Images</h2>
 
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })

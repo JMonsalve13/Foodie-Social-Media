@@ -13,17 +13,12 @@
 {
     @Html.AntiForgeryToken()
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5b978dccbfe5619444b4c64f0362007db219f8e1
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <center><img class="profilepic" src="@Model.ProfilePicURL" /></center>
     <div>
-        <center><input id = "file" name="file" type="file" accept="image/png, image/jpeg" /> </center>
+        <center><input id="file" name="file" type="file" accept="image/png, image/jpeg" /> </center>
         <center><p id="warning">Please upload porportional images to stop img stretching (500x500px, 1080x1080px) ect.</p></center>
         <br />
 
@@ -37,9 +32,53 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.UserBio, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div id ="BioBox"class="col-md-10">
+        <div id="BioBox" class="col-md-10">
             @Html.EditorFor(model => model.UserBio, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.UserBio, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Diet, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div id="BioBox" class="col-md-10">
+            @Html.EditorFor(model => model.Diet, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Diet, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.WeightInPounds, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div id="BioBox" class="col-md-10">
+            @Html.EditorFor(model => model.WeightInPounds, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.WeightInPounds, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FaveFood, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div id="BioBox" class="col-md-10">
+            @Html.EditorFor(model => model.FaveFood, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FaveFood, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div id="BioBox" class="col-md-10">
+            @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
         </div>
     </div>
 

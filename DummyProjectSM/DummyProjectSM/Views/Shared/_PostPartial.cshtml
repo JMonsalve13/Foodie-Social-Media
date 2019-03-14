@@ -1,4 +1,17 @@
 ﻿@model DummyProjectSM.Models.PostModel
+    @{ 
+        Boolean isOwned = false;
+
+        var service = new DummyProjectSM.Models.UserPostsModel();
+        foreach (DummyProjectSM.Models.PostModel p in service.UserPosts)
+        {
+            if (p.PostID == Model.PostID)
+            {
+                isOwned = true;
+            }
+        }
+
+    }
 
 <div>
     @Model.PostTitle
@@ -17,7 +30,7 @@
     }
 </div>
 <div class="deledit">
-    @if (User.IsInRole("Admin"))
+    @if (User.IsInRole("Admin") || isOwned)
     {
         <button>
             <a href="/Home/Delete/@Model.PostID">
